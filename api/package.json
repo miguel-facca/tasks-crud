@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "tasks api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguel-facca/tasks-crud.git"
+  },
+  "author": "Miguel Facca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguel-facca/tasks-crud/issues"
+  },
+  "homepage": "https://github.com/miguel-facca/tasks-crud#readme",
+  "dependencies": {
+    "@fastify/mysql": "^4.3.0",
+    "@types/node": "^22.5.0",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "fastify-plugin": "^4.5.1",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
+  }
+}
