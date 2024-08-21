@@ -8,7 +8,7 @@ async function routes(fastify, options) {
 
   fastify.post("/tasks", TasksController.create);
 
-  fastify.delete("/tasks/:id", TasksController.delete);
+  fastify.delete("/tasks", TasksController.delete);
 }
 
 export const Routes = fastifyPlugin(routes);

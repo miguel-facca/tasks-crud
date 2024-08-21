@@ -42,15 +42,18 @@ class TasksControllerClass {
       });
     }
 
-    if (!(await TasksRepository.create(title, content))) {
-      return response({ status: 400 });
+    const data = await TasksRepository.create(title, content);
+
+    if (!data) {
+      return response.send({ status: 400 });
     }
 
-    return response({ status: 201 });
+    return await response.send({ status: 201, id: data.insertId });
   }
 
   async delete(request, response) {
-    const { id } = request.params;
+    const { id } = request.body;
+    console.log({ request });
 
     if (!id) {
       return response.send({
@@ -58,9 +61,10 @@ class TasksControllerClass {
       });
     }
 
-    if (!(await TasksRepository.delete(id))) return response({ status: 404 });
+    if (!(await TasksRepository.delete(id)))
+      return response.send({ status: 404 });
 
-    return response({ status: 200 });
+    return response.send({ status: 200 });
   }
 }
 

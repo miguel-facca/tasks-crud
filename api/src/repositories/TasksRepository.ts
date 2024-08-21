@@ -3,7 +3,6 @@ import { fastify } from "../server";
 class TasksRepositoryClass {
   async index() {
     const [rows] = await fastify.mysql.query("SELECT * FROM tasks", []);
-    console.log("aq");
 
     return rows;
   }

@@ -2,9 +2,13 @@ import "dotenv/config";
 import { Connector } from "./database/connect";
 import { Routes } from "./routes";
 
+import cors from "@fastify/cors";
+
 export const fastify = require("fastify")({
-  logger: true,
+  logger: false,
 });
+
+fastify.register(cors);
 
 fastify.register(Connector);
 fastify.register(Routes);
